@@ -1,0 +1,101 @@
+<div class="storyFlavour-settings">
+    <div class="inline-drawer">
+        <div class="inline-drawer-toggle inline-drawer-header">
+            <b>StoryFlavour Manager</b>
+            <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+        </div>
+
+        <div class="inline-drawer-content">
+            <!-- Profile List -->
+            <div class="storyFlavour-section">
+                <div class="storyFlavour-section-title">Profiles</div>
+                <div id="storyFlavour-profile-list" class="storyFlavour-profile-list">
+                    <div class="storyFlavour-no-profiles">No profiles yet. Create one to get started!</div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="storyFlavour-action-row">
+                <button id="storyFlavour-create-btn" class="storyFlavour-btn storyFlavour-btn-primary">
+                    <i class="fa-solid fa-plus"></i> New Profile
+                </button>
+                <button id="storyFlavour-import-btn" class="storyFlavour-btn">
+                    <i class="fa-solid fa-file-import"></i> Import
+                </button>
+                <input type="file" id="storyFlavour-import-file" accept=".json" style="display:none">
+            </div>
+
+            <!-- Settings -->
+            <div class="storyFlavour-section storyFlavour-settings-section">
+                <label class="storyFlavour-toggle">
+                    <input type="checkbox" id="storyFlavour-auto-switch">
+                    <span>Auto-apply profile on chat switch</span>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Profile Editor Modal -->
+<div id="storyFlavour-editor-modal" class="storyFlavour-modal">
+    <div class="storyFlavour-modal-content">
+        <div class="storyFlavour-modal-header" id="storyFlavour-modal-title">
+            Create New Profile
+        </div>
+
+        <!-- Profile Name -->
+        <div class="storyFlavour-modal-section">
+            <label class="storyFlavour-modal-label" for="storyFlavour-profile-name-input">
+                Profile Name
+            </label>
+            <input type="text" id="storyFlavour-profile-name-input"
+                   class="storyFlavour-modal-input text_pole"
+                   placeholder="e.g. Fantasy Dark, Modern Romance">
+        </div>
+
+        <!-- Description -->
+        <div class="storyFlavour-modal-section">
+            <label class="storyFlavour-modal-label" for="storyFlavour-profile-desc-input">
+                Description
+            </label>
+            <textarea id="storyFlavour-profile-desc-input"
+                      class="storyFlavour-modal-input text_pole"
+                      placeholder="Optional description..."
+                      rows="2"></textarea>
+        </div>
+
+        <!-- Accents -->
+        <div class="storyFlavour-modal-section">
+            <div class="storyFlavour-section-label">Accents</div>
+            <div id="storyFlavour-accents-checkboxes" class="storyFlavour-checkbox-group"></div>
+        </div>
+
+        <!-- Genre -->
+        <div class="storyFlavour-modal-section">
+            <div class="storyFlavour-section-label">Genre</div>
+            <div id="storyFlavour-genre-checkboxes" class="storyFlavour-checkbox-group"></div>
+        </div>
+
+        <!-- Tone -->
+        <div class="storyFlavour-modal-section">
+            <div class="storyFlavour-section-label">Tone</div>
+            <div id="storyFlavour-tone-checkboxes" class="storyFlavour-checkbox-group"></div>
+        </div>
+
+        <!-- WriteStyle -->
+        <div class="storyFlavour-modal-section">
+            <div class="storyFlavour-section-label">Write Style</div>
+            <div id="storyFlavour-writeStyle-checkboxes" class="storyFlavour-checkbox-group"></div>
+        </div>
+
+        <!-- Modal Buttons -->
+        <div class="storyFlavour-modal-buttons">
+            <button id="storyFlavour-modal-cancel" class="storyFlavour-modal-btn storyFlavour-modal-btn-cancel">
+                Cancel
+            </button>
+            <button id="storyFlavour-modal-save" class="storyFlavour-modal-btn storyFlavour-modal-btn-save">
+                Save Profile
+            </button>
+        </div>
+    </div>
+</div>

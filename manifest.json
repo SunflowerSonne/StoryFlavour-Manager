@@ -1,0 +1,15 @@
+{
+  "display_name": "StoryFlavour Manager",
+  "loading_order": 100,
+  "requires": [],
+  "optional": [],
+  "js": "index.js",
+  "css": "style.css",
+  "auto_update": false,
+  "author": "Sunflower",
+  "version": "1.0.0",
+  "homePage": "",
+  "i18n": {
+    "ru-ru": "i18n/ru-ru.json"
+  }
+}
