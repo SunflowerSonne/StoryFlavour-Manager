@@ -298,7 +298,12 @@ function showEditorModal(profileName) {
 
     renderEditorCheckboxes(profile);
 
-    $('#storyFlavour-editor-modal').addClass('active');
+    const modal = $('#storyFlavour-editor-modal');
+    // Move modal to body to ensure it's on top of everything
+    if (modal.parent()[0] !== document.body) {
+        modal.appendTo('body');
+    }
+    modal.addClass('active');
 }
 
 function closeEditorModal() {
