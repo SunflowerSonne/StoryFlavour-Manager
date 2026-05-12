@@ -151,8 +151,10 @@
 
 .storyFlavour-modal.active {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    padding: 20px 0;
+    overflow-y: auto;
 }
 
 .storyFlavour-modal-content {
@@ -162,23 +164,15 @@
     padding: 20px;
     width: 90%;
     max-width: 500px;
-    max-height: 85vh;
+    max-height: calc(100vh - 40px);
     overflow-y: auto;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    margin: auto 0;
 }
 
-/* Mobile fixes */
-@media (max-width: 768px) {
+@media (min-height: 700px) {
     .storyFlavour-modal.active {
-        align-items: flex-start;
-        padding: 20px 0;
-        overflow-y: auto;
-    }
-
-    .storyFlavour-modal-content {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        max-height: calc(100vh - 40px);
+        align-items: center;
     }
 }
 
