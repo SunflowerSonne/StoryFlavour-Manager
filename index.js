@@ -298,12 +298,7 @@ function showEditorModal(profileName) {
 
     renderEditorCheckboxes(profile);
 
-    const modal = $('#storyFlavour-editor-modal');
-    // Move modal to body to ensure it's on top of everything
-    if (modal.parent()[0] !== document.body) {
-        modal.appendTo('body');
-    }
-    modal.addClass('active');
+    $('#storyFlavour-editor-modal').addClass('active');
 }
 
 function closeEditorModal() {
@@ -447,6 +442,13 @@ jQuery(async () => {
     const { renderExtensionTemplateAsync } = c;
     const settingsHtml = await renderExtensionTemplateAsync(extensionFolderPath, 'settings');
     $('#extensions_settings2').append(settingsHtml);
+
+    // Move modal to body immediately to ensure proper z-index stacking
+    const modal = $('#storyFlavour-editor-modal');
+    if (modal.length > 0) {
+        modal.detach().appendTo('body');
+        console.log(`[${extensionName}] Modal moved to body`);
+    }
 
     $('#storyFlavour-auto-switch').prop('checked', settings().autoSwitch);
 
