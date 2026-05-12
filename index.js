@@ -319,7 +319,20 @@ function showEditorModal(profileName) {
 }
 
 function closeEditorModal() {
-    $('#storyFlavour-editor-modal').removeClass('active');
+    const modal = $('#storyFlavour-editor-modal');
+    modal.removeClass('active');
+    // Remove inline styles
+    modal.css({
+        'position': '',
+        'z-index': '',
+        'top': '',
+        'left': '',
+        'right': '',
+        'bottom': '',
+        'width': '',
+        'height': '',
+        'display': ''
+    });
     // Restore body scroll
     $('body').css('overflow', '');
 }
