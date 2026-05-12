@@ -298,11 +298,30 @@ function showEditorModal(profileName) {
 
     renderEditorCheckboxes(profile);
 
-    $('#storyFlavour-editor-modal').addClass('active');
+    const modal = $('#storyFlavour-editor-modal');
+    modal.addClass('active');
+
+    // Force styles to ensure modal is on top
+    modal.css({
+        'position': 'fixed',
+        'z-index': '2147483647',
+        'top': '0',
+        'left': '0',
+        'right': '0',
+        'bottom': '0',
+        'width': '100vw',
+        'height': '100vh',
+        'display': 'block'
+    });
+
+    // Prevent body scroll
+    $('body').css('overflow', 'hidden');
 }
 
 function closeEditorModal() {
     $('#storyFlavour-editor-modal').removeClass('active');
+    // Restore body scroll
+    $('body').css('overflow', '');
 }
 
 function gatherEditorData() {
