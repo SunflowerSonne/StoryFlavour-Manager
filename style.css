@@ -167,6 +167,21 @@
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
+/* Mobile fixes */
+@media (max-width: 768px) {
+    .storyFlavour-modal.active {
+        align-items: flex-start;
+        padding: 20px 0;
+        overflow-y: auto;
+    }
+
+    .storyFlavour-modal-content {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        max-height: calc(100vh - 40px);
+    }
+}
+
 .storyFlavour-modal-header {
     font-size: 1.2em;
     font-weight: 600;
